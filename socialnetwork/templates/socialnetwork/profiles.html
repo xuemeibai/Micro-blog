@@ -1,0 +1,77 @@
+{% extends "socialnetwork/base.html" %}
+{% block user-info %}
+<div class="dropdown">
+    <span id=id_logged_in_user_name>{{user.first_name}} {{user.last_name}}</span>
+     <button class="dropbtn" id="id_show_nav_button">&darr;</button>
+      <ul class="dropdown-content">
+        <a id="id_nav_global_stream" href="{% url 'globalStream' %}">Global Stream</a>
+        <a id="id_nav_follower_stream" href="{% url 'followerStream' %}">Follower Stream</a>
+        <a id="id_nav_profile" href="{% url 'profiles' user.id %}">My Profile</a>
+        <a id="id_nav_logout" href="{% url 'login' %}">Logout</a>
+        </ul>
+</div>
+{% endblock %}
+
+{% block page-heading %}
+
+ {{profile.user.first_name}} {{profile.user.last_name}} Profile
+{% endblock %}
+
+{% block content %}
+
+{% if profile.profile_picture %}
+<img id="id_user_picture" src="{% url 'photo' profile.id %}" width="300" height="300"/>
+{% else %}
+{% load static %}
+<img id="id_user_picture" src="{% static 'socialnetwork/default.jpg' %}" width="300" height="300"/>
+{% endif %}
+<br>
+
+{% if identity.id == user.id %}
+<form enctype="multipart/form-data" method="post" action="{% url 'edit'%}">
+  <table>
+      {% for field in form.visible_fields %}
+          <tr>
+              <td>{{field.label_tag}}</td>
+              <td>{{field}}</td>
+              <td class="error">
+                  {% for error in field.errors %} {{error}} {% endfor %}
+              </td>
+          </tr>
+      {% endfor %}
+      <tr><td colspan="3"><input id= "id_update_profile_button" type="submit" value="Submit"></td></tr>
+
+  </table>
+      {% csrf_token %}
+  </form>
+  <div>
+  Your are following:<br>
+
+  {% for getuser in followings %}
+
+  <a href="{% url 'profiles' getuser.id %}" id="id_profile_link_{{getuser.username}}">{{getuser.first_name}} {{getuser.last_name}} </a>
+  {% endfor %}
+
+
+  {% else %}
+  <img id="id_user_picture" src="{% url 'photo' profile.id" alt="" width="400px"id="id_user_picture">
+  <br id=id_user_bio>
+  {{profile.post_input_text}}
+  </div>
+
+  <br>
+
+
+
+  <div class="followbtn">
+  {% if profile.user in userprofile %}
+     <a  id="id_unfollow" href="{% url 'unfollow' profile.id %}" >Unfollow</a>
+  {% else %}
+     <a  id="id_follow" href="{% url 'follow' profile.id %}" >Follow</a>
+  {% endif %}
+  {% endif %}
+</div>
+
+
+
+{% endblock %}

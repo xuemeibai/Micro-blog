@@ -1,0 +1,158 @@
+.big-heading {
+    font-size: xxx-large;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding:40px 50px;
+    background-color: #CCCCFF;
+    color: #000000;
+}
+.user-info {
+  text-align: right;
+  font-family: sans-serif;
+  padding-right: 10px;
+  font-size: x-large;
+  margin-top: -300px;
+
+}
+.page-heading {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 100px 50px;
+    color: #000000;
+}
+
+button {
+  font-size: 20px;
+  height: 40px;
+  margin: 5px 0 5px 10px;
+  width: 150px;
+  border-radius: 10px;
+}
+.dropdown {
+  position: relative;
+  display: block;
+}
+.dropbtn{
+    background-color: #CCDDFF;
+    color: #000000;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #CCDDFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: large;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+  background-color: #5599FF;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+.errorlist {
+    color:red;
+}
+.bio{
+  border-style: solid;
+  border-color: #000000;
+}
+
+.message {
+    color:blue;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    font-family: sans-serif;
+    padding: 25px 50px;
+}
+
+.search-bar {
+    text-align: center;
+    padding: 25px 50px;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    font-family: sans-serif;
+    font-size: x-large;
+    padding: 150px 50px;
+    text-align: center;
+}
+
+.list {
+    padding: 3px;
+    list-style:none
+}
+
+.list-link {
+    padding: 5px;
+    list-style:none
+}
+
+.list-link:hover {
+     background-color:lightgray;
+     list-style:none
+}
+
+th {
+    font-weight: normal;
+    text-align: left;
+}
+
+a {
+     text-decoration: none;
+     color:black;
+}
+
+
+input {
+    font-size: x-large;
+}
+
+div, form {
+    padding: 4px;
+}
+li{
+  list-style:none
+}
+
+.dropdownlink {
+    background-color: lightgray;
+}
+
+.letter {
+    padding: 3px;
+    font-family: sans-serif;
+    font-size: x-large;
+
+}
+
+.letter:hover {
+     background-color:lightgray;
+}
+.followbtn{
+  font-size: x-large;
+  color: #000000;
+  text-align: center;
+}

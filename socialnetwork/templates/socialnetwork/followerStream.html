@@ -1,0 +1,37 @@
+{% extends "socialnetwork/base.html" %}
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    {% load static %}
+		<link href="{% static 'socialnetwork/base.css' %}" rel="stylesheet" type="text/css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			 crossorigin="anonymous"></script>
+	</head>
+{% block user-info %}
+
+<div class="dropdown">
+    <span id=id_logged_in_user_name>{{user.first_name}} {{user.last_name}}</span>
+     <button class="dropbtn" id="id_show_nav_button">&darr;</button>
+      <ul class="dropdown-content">
+        <a id="id_nav_global_stream" href="{% url 'globalStream' %}">Global Stream</a>
+        <a id="id_nav_follower_stream" href="{% url 'followerStream' %}">Follower Stream</a>
+        <a id="id_nav_profile" href="{% url 'profiles' profile.id%}">My Profile</a>
+        <a id="id_nav_logout" href="{% url 'login' %}">Logout</a>
+        </ul>
+</div>
+{% endblock %}
+
+{% block page-heading %}
+
+<div id="id_name_of_page">
+Follower Stream
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div id="postcontent">
+</div>
+{% endblock %}
