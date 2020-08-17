@@ -1,1 +1,1 @@
-The URL to access my homework solution is http://3.135.246.105
+The URL to access my website is http://3.135.246.105
